@@ -25,19 +25,19 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1yf-We-GMU">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oJv-IB-Tm8">
                                                 <rect key="frame" x="0.0" y="50" width="240" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgF-kT-iup">
                                                 <rect key="frame" x="0.0" y="100" width="240" height="34.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                                 <connections>
-                                                    <segue destination="Yv7-oB-fSr" kind="presentation" modalPresentationStyle="fullScreen" id="0gI-8c-WNf"/>
+                                                    <segue destination="Yv7-oB-fSr" kind="presentation" modalPresentationStyle="fullScreen" id="PmS-Ax-OHh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -79,8 +79,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="passwordTextField" destination="oJv-IB-Tm8" id="noK-Sf-UEu"/>
-                        <outlet property="userNameTextField" destination="kMm-aS-IhX" id="Zbd-6d-NWX"/>
+                        <outlet property="passwordTextField" destination="oJv-IB-Tm8" id="ef9-V8-p2j"/>
+                        <outlet property="userNameTextField" destination="1yf-We-GMU" id="lWQ-MB-0oK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,40 +101,44 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQm-hG-Hbk">
-                                <rect key="frame" x="121" y="401" width="78" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Log out"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-gy-cpO">
-                                <rect key="frame" x="60" y="166" width="200" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="gTV-I4-Lhh"/>
-                                </constraints>
+                                <rect key="frame" x="107.5" y="166" width="105" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ris-SK-4uy">
+                                <rect key="frame" x="124" y="420" width="72" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Zag-hy-ei6" kind="unwind" unwindAction="unwindFor:" id="y2K-5y-S9a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mty-DS-XPV"/>
                         <color key="backgroundColor" red="0.37561955784949896" green="0.67525258458646609" blue="0.37822243237664538" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="ris-SK-4uy" firstAttribute="centerX" secondItem="eBU-HA-xQ7" secondAttribute="centerX" id="3US-Ug-SgC"/>
                             <constraint firstItem="lEd-YD-kM5" firstAttribute="centerY" secondItem="eBU-HA-xQ7" secondAttribute="centerY" id="JAX-E1-CBo"/>
+                            <constraint firstItem="ris-SK-4uy" firstAttribute="top" secondItem="lEd-YD-kM5" secondAttribute="bottom" constant="100" id="MYs-Qo-nYc"/>
                             <constraint firstItem="lEd-YD-kM5" firstAttribute="centerX" secondItem="eBU-HA-xQ7" secondAttribute="centerX" id="OqM-4Y-Vaw"/>
-                            <constraint firstItem="eQm-hG-Hbk" firstAttribute="centerX" secondItem="eBU-HA-xQ7" secondAttribute="centerX" id="VLk-mc-I8u"/>
                             <constraint firstItem="lEd-YD-kM5" firstAttribute="top" secondItem="mIN-gy-cpO" secondAttribute="bottom" constant="50" id="Z0A-mc-YSB"/>
                             <constraint firstItem="mIN-gy-cpO" firstAttribute="centerX" secondItem="eBU-HA-xQ7" secondAttribute="centerX" id="wWc-54-zef"/>
-                            <constraint firstItem="mty-DS-XPV" firstAttribute="bottom" secondItem="eQm-hG-Hbk" secondAttribute="bottom" constant="126" id="xwD-7S-4wo"/>
                         </constraints>
                     </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="mIN-gy-cpO" id="pbh-mo-QJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2OS-vh-SKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Zag-hy-ei6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="788" y="-23"/>
+            <point key="canvasLocation" x="812" y="-23"/>
         </scene>
     </scenes>
     <resources>
